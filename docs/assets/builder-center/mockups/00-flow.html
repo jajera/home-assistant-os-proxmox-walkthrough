@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Flow — HA → IAM user → S3</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1200px;
+    height: 420px;
+    overflow: hidden;
+    font-family: "Amazon Ember", Inter, "Helvetica Neue", Arial, sans-serif;
+    background: #f6f7f9;
+    color: #16191f;
+    display: grid;
+    place-items: center;
+  }
+  .wrap {
+    width: 1120px;
+  }
+  .flow {
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr 100px 1fr;
+    align-items: stretch;
+    gap: 0;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #d5dbdb;
+    border-radius: 12px;
+    padding: 28px 18px 22px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .icon {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 16px;
+    display: grid;
+    place-items: center;
+  }
+  .icon img, .icon svg {
+    width: 72px;
+    height: 72px;
+    display: block;
+    border-radius: 2px;
+  }
+  .icon.user {
+    width: 72px;
+    height: 72px;
+    background: #fff;
+    border: 1px solid #d5dbdb;
+    border-radius: 2px;
+  }
+  .icon.user img { width: 48px; height: 48px; }
+  .name {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .meta {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #545b64;
+    line-height: 1.35;
+  }
+  .arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #687078;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .arrow svg { width: 80px; height: 24px; }
+  .note {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .note div {
+    background: #fff;
+    border: 1px solid #e4e7eb;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #545b64;
+    line-height: 1.4;
+  }
+  .note strong { color: #16191f; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="flow">
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 80 80" fill="none">
+            <rect width="80" height="80" fill="#03A9F4"/>
+            <path d="M40 16L62 34V66H48V48H32V66H18V34L40 16Z" fill="#fff"/>
+            <path d="M40 28L32 35V42H36V38H44V42H48V35L40 28Z" fill="#03A9F4"/>
+          </svg>
+        </div>
+        <div class="name">Home Assistant</div>
+        <div class="meta">On-prem · local control</div>
+      </div>
+
+      <div class="arrow">
+        <span>uses</span>
+        <svg viewBox="0 0 80 24" aria-hidden="true">
+          <path d="M2 12 H62" stroke="#aab7b8" stroke-width="3" stroke-linecap="round"/>
+          <path d="M54 4 L70 12 L54 20" fill="none" stroke="#ec7211" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="card">
+        <div class="icon user" aria-hidden="true">
+          <img src="icons/Res_User_48_Light.svg" alt="IAM user"/>
+        </div>
+        <div class="name">IAM user</div>
+        <div class="meta">ha-backup-uploader<br>bucket-only policy</div>
+      </div>
+
+      <div class="arrow">
+        <span>writes</span>
+        <svg viewBox="0 0 80 24" aria-hidden="true">
+          <path d="M2 12 H62" stroke="#aab7b8" stroke-width="3" stroke-linecap="round"/>
+          <path d="M54 4 L70 12 L54 20" fill="none" stroke="#7AA116" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <img src="icons/Arch_Amazon-Simple-Storage-Service_64.svg" alt="Amazon S3"/>
+        </div>
+        <div class="name">Amazon S3</div>
+        <div class="meta">Private bucket · SSE-S3<br>ap-southeast-6</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <div><strong>Local copy</strong> — fast rollback after a bad update</div>
+      <div><strong>S3 copy</strong> — survives host loss · encrypted · daily · retain 3</div>
+    </div>
+  </div>
+</body>
+</html>

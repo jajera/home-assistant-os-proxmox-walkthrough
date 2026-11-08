@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>S3 · ha-backups-kiwi-home</title>
+<style>
+  :root {
+    --aws-nav: #232f3e;
+    --aws-orange: #ff9900;
+    --border: #b6bec9;
+    --bg: #f2f3f3;
+    --panel: #fff;
+    --text: #16191f;
+    --muted: #545b64;
+    --link: #0073bb;
+    --ok: #1d8102;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Amazon Ember", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    width: 1280px;
+    height: 800px;
+    overflow: hidden;
+    font-size: 14px;
+  }
+  .top {
+    height: 40px;
+    background: var(--aws-nav);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 18px;
+    color: #d5dbdb;
+    font-size: 13px;
+  }
+  .logo { color: #fff; font-weight: 700; letter-spacing: .02em; }
+  .logo span { color: var(--aws-orange); }
+  .svc { color: #fff; font-weight: 500; }
+  .search {
+    flex: 1;
+    max-width: 480px;
+    background: #414d5c;
+    border-radius: 2px;
+    height: 28px;
+    color: #aab7b8;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+  .crumb-bar {
+    background: var(--panel);
+    border-bottom: 1px solid #eaeded;
+    padding: 10px 24px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .crumb-bar a { color: var(--link); text-decoration: none; }
+  .wrap { padding: 18px 24px 24px; }
+  .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+  h1 { font-size: 28px; font-weight: 400; line-height: 1.2; }
+  .meta { color: var(--muted); margin-top: 4px; font-size: 13px; }
+  .btns { display: flex; gap: 8px; }
+  .btn {
+    border: 1px solid #545b64;
+    background: #fff;
+    border-radius: 2px;
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+  .btn.primary {
+    background: #ec7211;
+    border-color: #ec7211;
+    color: #111;
+    font-weight: 700;
+  }
+  .tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+  }
+  .tab {
+    padding: 10px 16px;
+    color: var(--muted);
+    border-bottom: 2px solid transparent;
+  }
+  .tab.active {
+    color: var(--text);
+    font-weight: 700;
+    border-bottom-color: #ec7211;
+  }
+  .panel {
+    background: var(--panel);
+    border: 1px solid #d5dbdb;
+    border-radius: 2px;
+  }
+  .panel h2 {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 16px;
+    border-bottom: 1px solid #eaeded;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+  }
+  .row {
+    display: contents;
+  }
+  .k, .v {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eaeded;
+  }
+  .k { color: var(--muted); background: #fafafa; }
+  .v { color: var(--text); }
+  .row:last-child .k, .row:last-child .v { border-bottom: none; }
+  .pill {
+    display: inline-block;
+    background: #f2f8f0;
+    color: var(--ok);
+    border: 1px solid #abd2a0;
+    padding: 1px 8px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .note {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="logo">aws <span></span></div>
+    <div class="svc">S3</div>
+    <div class="search">Search for services, features, docs…</div>
+    <div>ap-southeast-6</div>
+    <div>1111-2222-3333</div>
+  </div>
+  <div class="crumb-bar">
+    <a href="#">Buckets</a> &nbsp;/&nbsp; <strong style="color:var(--text)">ha-backups-kiwi-home</strong>
+  </div>
+  <div class="wrap">
+    <div class="title-row">
+      <div>
+        <h1>ha-backups-kiwi-home</h1>
+        <div class="meta">Asia Pacific (New Zealand) · ap-southeast-6 · Created 8 November 2026, 18:00 GMT+13</div>
+      </div>
+      <div class="btns">
+        <button class="btn">Empty</button>
+        <button class="btn">Delete</button>
+        <button class="btn primary">Upload</button>
+      </div>
+    </div>
+    <div class="tabs">
+      <div class="tab">Objects</div>
+      <div class="tab active">Properties</div>
+      <div class="tab">Permissions</div>
+      <div class="tab">Metrics</div>
+      <div class="tab">Management</div>
+    </div>
+    <div class="panel">
+      <h2>Bucket overview</h2>
+      <div class="grid">
+        <div class="row"><div class="k">AWS Region</div><div class="v">ap-southeast-6 (Asia Pacific — New Zealand)</div></div>
+        <div class="row"><div class="k">Amazon Resource Name (ARN)</div><div class="v">arn:aws:s3:::ha-backups-kiwi-home</div></div>
+        <div class="row"><div class="k">Bucket Versioning</div><div class="v">Disabled</div></div>
+        <div class="row"><div class="k">Default encryption</div><div class="v">Server-side encryption with Amazon S3 managed keys (SSE-S3)</div></div>
+        <div class="row"><div class="k">Block Public Access</div><div class="v"><span class="pill">On</span> &nbsp; Block all public access — 4 of 4 settings</div></div>
+        <div class="row"><div class="k">Object Ownership</div><div class="v">Bucket owner enforced</div></div>
+        <div class="row"><div class="k">Objects</div><div class="v">0 objects · 0 B (ready for Home Assistant)</div></div>
+      </div>
+    </div>
+    <p class="note">Illustration uses fictitious account and bucket names.</p>
+  </div>
+</body>
+</html>

@@ -31,3 +31,5 @@ enterprise vs no-subscription.
    Create VM System, Import disk). Labels match the Proxmox guide:
    “Two disks: ZFS mirror” / “One disk: ext4”. Do not fork the pages.
 5. Do not commit qcow2/xz/ISO images, passwords, API tokens, or private keys.
+6. `docs/assets/builder-center/` is paste-kit reference for AWS Builder Center
+   (not in site nav). Do not commit `captures/_raw/` (may hold HA session tokens).
