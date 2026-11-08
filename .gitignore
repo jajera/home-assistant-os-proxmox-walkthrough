@@ -1,6 +1,7 @@
 attachments*/
 .cache/
 .capture-refs/
+docs/assets/builder-center/captures/_raw/
 .DS_Store
 .env
 IMG_*.HEIC

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Cover — HA → IAM user → S3</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1200px;
+    height: 675px;
+    overflow: hidden;
+    font-family: "Amazon Ember", Inter, "Helvetica Neue", Arial, sans-serif;
+    background: #0b1219;
+    color: #f7f8f8;
+    display: grid;
+    place-items: center;
+  }
+  .wrap {
+    width: 1080px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  .title { text-align: center; }
+  .title h1 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .title p {
+    margin-top: 12px;
+    font-size: 15px;
+    color: #9ba7b4;
+  }
+  .flow {
+    display: grid;
+    grid-template-columns: 1fr 96px 1fr 96px 1fr;
+    align-items: stretch;
+  }
+  .card {
+    background: #15202b;
+    border: 1px solid #2a3847;
+    border-radius: 14px;
+    padding: 34px 18px 26px;
+    text-align: center;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    display: grid;
+    place-items: center;
+  }
+  .icon img, .icon svg {
+    width: 80px;
+    height: 80px;
+    display: block;
+    border-radius: 2px;
+  }
+  .icon.user {
+    background: #fff;
+    border-radius: 2px;
+  }
+  .icon.user img { width: 52px; height: 52px; }
+  .name {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .meta {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #8b98a5;
+    line-height: 1.4;
+  }
+  .arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #8b98a5;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .arrow svg { width: 76px; height: 28px; }
+  .foot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #6b7785;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="title">
+      <h1>Home Assistant off-site backups on Amazon S3</h1>
+      <p>Home Assistant → IAM user → private S3 bucket</p>
+    </div>
+
+    <div class="flow">
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 80 80" fill="none">
+            <rect width="80" height="80" fill="#03A9F4"/>
+            <path d="M40 16L62 34V66H48V48H32V66H18V34L40 16Z" fill="#fff"/>
+            <path d="M40 28L32 35V42H36V38H44V42H48V35L40 28Z" fill="#03A9F4"/>
+          </svg>
+        </div>
+        <div class="name">Home Assistant</div>
+        <div class="meta">On-prem<br>local control</div>
+      </div>
+
+      <div class="arrow">
+        <span>uses</span>
+        <svg viewBox="0 0 76 28" aria-hidden="true">
+          <path d="M4 14 H58" stroke="#5b6b7c" stroke-width="3" stroke-linecap="round"/>
+          <path d="M50 6 L68 14 L50 22" fill="none" stroke="#ff9900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="card">
+        <div class="icon user" aria-hidden="true">
+          <img src="icons/Res_User_48_Light.svg" alt="IAM user"/>
+        </div>
+        <div class="name">IAM user</div>
+        <div class="meta">ha-backup-uploader<br>bucket-only policy</div>
+      </div>
+
+      <div class="arrow">
+        <span>writes</span>
+        <svg viewBox="0 0 76 28" aria-hidden="true">
+          <path d="M4 14 H58" stroke="#5b6b7c" stroke-width="3" stroke-linecap="round"/>
+          <path d="M50 6 L68 14 L50 22" fill="none" stroke="#7AA116" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <img src="icons/Arch_Amazon-Simple-Storage-Service_64.svg" alt="Amazon S3"/>
+        </div>
+        <div class="name">Amazon S3</div>
+        <div class="meta">Private bucket<br>SSE-S3 · ap-southeast-6</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span>Local copy for fast rollback</span>
+      <span>Encrypted · daily · retain 3</span>
+    </div>
+  </div>
+</body>
+</html>
