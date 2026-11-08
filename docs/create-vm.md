@@ -3,16 +3,19 @@
 In the Proxmox web UI, open **Create VM**. Leave **Start after created** off —
 you import the disk next.
 
-![Create VM, General: name haos, VMID 100, Start at boot](assets/create-vm/01-general.jpg)
+![Create VM, General: name haos, VMID 100](assets/create-vm/01-general.jpg)
 
 ## General
+
+Tick **Advanced** at the bottom of the wizard once. It keeps the extra fields
+(Start at boot, CPU flags, memory ballooning) visible on every tab.
 
 | Field | Value |
 | --- | --- |
 | Node | your Proxmox node (example `pve`) |
 | VM ID | free ID (example `100`; use `pvesh get /cluster/nextid`) |
 | Name | `haos` |
-| Start at boot | on |
+| Start at boot | on (shown with **Advanced** ticked) |
 
 ## OS
 
@@ -20,7 +23,7 @@ you import the disk next.
 | --- | --- |
 | ISO image | **Do not use any media** |
 | Guest OS type | Linux |
-| Version | 6.x - 2.6 Kernel |
+| Version | Leave the default (`7.x - 2.6 Kernel` on current Proxmox VE) |
 
 ![OS tab: Do not use any media](assets/create-vm/02-os.jpg)
 
