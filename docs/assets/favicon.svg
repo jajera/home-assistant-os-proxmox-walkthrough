@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Home Assistant OS on Proxmox walkthrough">
+  <rect x="0" y="0" width="32" height="32" rx="7" fill="#0b1c24"/>
+  <!-- rack base -->
+  <rect x="4" y="18" width="24" height="9" rx="1.5" fill="#14303c" stroke="#18BCF2" stroke-width="1.25"/>
+  <circle cx="7.5" cy="22.5" r="1" fill="#18BCF2"/>
+  <path d="M11 22.5h14" stroke="#18BCF2" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+  <!-- house roof + body -->
+  <path d="M16 5 L26 13 H6 Z" fill="#18BCF2"/>
+  <rect x="9" y="13" width="14" height="10" rx="1" fill="#41C9F5"/>
+  <rect x="13.5" y="16.5" width="5" height="6.5" rx="0.6" fill="#0b1c24"/>
+</svg>

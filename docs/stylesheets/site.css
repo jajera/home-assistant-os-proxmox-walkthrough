@@ -1,0 +1,62 @@
+/* Walkthrough screenshots: one width, soft frame, no float/card clutter. */
+.md-typeset img[src*="assets/create-vm/"],
+.md-typeset img[src*="assets/import-disk/"],
+.md-typeset img[src*="assets/prove-ui/"] {
+  display: block;
+  width: 100%;
+  max-width: 48rem;
+  margin: 1rem 0 1.35rem;
+  border: 1px solid var(--patina-border);
+  border-radius: 6px;
+}
+
+/*
+ * Command + result: one outer frame only.
+ * Command band is darker; result is lighter under a hairline.
+ */
+.md-typeset .run {
+  margin: 1.15rem 0 1.45rem;
+  border: 1px solid var(--patina-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--patina-surface);
+}
+
+.md-typeset .run > .highlight {
+  position: relative;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: var(--md-code-bg-color) !important;
+}
+
+.md-typeset .run > .highlight + .highlight {
+  border-top: 1px solid var(--patina-border) !important;
+  background: var(--patina-surface) !important;
+}
+
+.md-typeset .run > .highlight > pre {
+  margin: 0 !important;
+  padding: 0.85rem 1rem !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+/* The result band carries {.no-copy}; patina rounds every .highlight/pre, which
+   left a concave inset inside the frame. Flatten it so it sits flush. */
+.md-typeset .run > .no-copy.highlight,
+.md-typeset .run > .highlight + .highlight {
+  border: 0 !important;
+  border-top: 1px solid var(--patina-border) !important;
+  border-radius: 0 !important;
+}
+
+.md-typeset .run > .highlight + .highlight .md-code__button,
+.md-typeset .run > .highlight + .highlight .md-clipboard {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

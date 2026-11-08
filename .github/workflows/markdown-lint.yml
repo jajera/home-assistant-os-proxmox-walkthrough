@@ -1,0 +1,35 @@
+name: Markdown Lint
+
+on:
+  pull_request: {}
+
+permissions:
+  statuses: write
+  checks: write
+  contents: read
+  pull-requests: read
+
+jobs:
+  markdown-lint:
+    uses: actionsforge/actions/.github/workflows/markdown-lint.yml@main
+    with:
+      # Zensical pymdownx tabs indent body text four spaces; that trips MD046
+      # against fenced .run blocks in the same file.
+      config: |
+        {
+          "comment": "Default rules",
+          "default": true,
+          "whitespace": false,
+          "line_length": false,
+          "ul-start-left": false,
+          "ul-indent": false,
+          "no-inline-html": false,
+          "no-bare-urls": false,
+          "fenced-code-language": false,
+          "first-line-h1": false,
+          "no-duplicate-heading": false,
+          "blanks-around-headings": false,
+          "no-emphasis-as-header": false,
+          "single-h1": false,
+          "code-block-style": false
+        }
