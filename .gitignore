@@ -1,0 +1,19 @@
+attachments*/
+.cache/
+.capture-refs/
+.DS_Store
+.env
+IMG_*.HEIC
+IMG_*.jpeg
+IMG_*.jpg
+IMG_*.JPG
+*.img
+*.iso
+*.qcow2
+*.qcow2.xz
+*.pyc
+__pycache__/
+site/
+.venv/
+*.zip
+Untitled design*.png
