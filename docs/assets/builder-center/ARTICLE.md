@@ -86,7 +86,7 @@ In the **AWS Management Console**. Dummy values match the screenshots — swap f
 
 ### 1. Create the bucket
 
-**S3 → Create bucket**
+In the console open S3 → Create bucket.
 
 - Bucket name: `ha-backups-kiwi-home`
 - Region: `ap-southeast-6`
@@ -100,7 +100,7 @@ Create the bucket. Confirm **Properties** shows public access blocked and encryp
 
 ### 2. IAM user (programmatic only)
 
-**IAM → Users → Create user**
+In the console open IAM → Users → Create user.
 
 - User name: `ha-backup-uploader`
 - Path (optional): `/homeassistant/`
@@ -149,7 +149,7 @@ That’s the **minimum** set Home Assistant’s AWS S3 backup agent needs.
 
 ### 1. Add the AWS S3 integration
 
-**Settings → Devices & services → Add integration → AWS S3**
+In Home Assistant open Settings → Devices & services → Add integration → AWS S3.
 
 | Field | Value |
 | ----- | ----- |
@@ -165,7 +165,7 @@ Leave **Area** empty (this isn’t a room device).
 
 ### 2. Turn on automatic backups
 
-**Settings → System → Backups**
+In Home Assistant open Settings → System → Backups.
 
 - Encryption **on** → download / save the **emergency kit** offline
 - Schedule: **daily**
